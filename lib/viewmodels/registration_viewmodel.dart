@@ -5,6 +5,7 @@ import 'package:dpo/services/auth_service.dart';
 import 'package:dpo/services/firestore_service.dart';
 import 'package:dpo/services/wallet_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:passkeys/passkeys.dart';
 
 class RegistrationViewModel {
   final AuthService _authService = AuthService();
