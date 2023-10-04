@@ -1,0 +1,38 @@
+name: dpo
+description: Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  passkeys: ^0.1.1
+  firebase_auth: ^4.10.0
+  cupertino_icons: ^1.0.2
+  cloud_firestore: ^4.9.2
+  firebase_core: ^2.16.0
+  firebase_storage: ^11.2.7
+  image_picker: ^1.0.2
+  provider: ^6.0.5
+  riverpod: ^1.0.3
+  fl_chart: ^0.63.0
+  http: ^0.13.3
+  logger: ^2.0.1
+  flutter_datetime_picker: ^1.5.1
+  url_launcher: ^6.0.12
+  qr_flutter: ^4.1.0
+  flutter_secure_storage: ^9.0.0
+  solana: ^0.30.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  mockito: ^5.4.2
+  test: any
+
+flutter:
+  uses-material-design: true
