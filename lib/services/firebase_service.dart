@@ -24,11 +24,10 @@ class FirebaseService {
   }
 }
 
-// firebase_service.dartは、Firebase Cloud Firestoreとの間のデータ操作を中心に処理するFirebaseServiceクラスを定義している。
-// このクラスは、特にpostsコレクションに関するデータの取得や追加のためのメソッドを提供しています。
+// Firebase Cloud Firestoreとの間のデータ操作を中心に処理するFirebaseServiceクラス定義
+// 特にpostsコレクションに関するデータの取得や追加のためのメソッド提供
 
-// '../models/post.dart': Postモデルクラスをインポートしている。
-// このクラスは、Firestoreから取得するポストのデータ構造を定義している。
+// Firestoreから取得するポストのデータ構造を定義
 
 // FirebaseServiceクラス:
 // FirebaseFirestore _db: FirebaseFirestoreのインスタンスを作成して、
