@@ -13,7 +13,6 @@ class EditPostViewModel with ChangeNotifier {
       await _firestore.collection('posts').doc(postId).update({'content': updatedContent});
       notifyListeners();
     } catch (e) {
-      // エラー処理をここに書く
       (e.toString());
     }
   }
