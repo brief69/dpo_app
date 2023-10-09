@@ -2,6 +2,7 @@
 
 // edit_name_page.dart
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class EditNamePage extends StatefulWidget {
   const EditNamePage({super.key});
@@ -13,9 +14,8 @@ class EditNamePage extends StatefulWidget {
 class EditNamePageState extends State<EditNamePage> {
   final TextEditingController _nameController = TextEditingController();
 
-  // TODO: #6 一度しか名前の登録、更新はできない。
-  // この機能を実装するためには、バックエンドまたはローカルストレージが必要です。
-  // 現時点ではこのコードでは省略しています。
+  // Firestore instance
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -37,13 +37,29 @@ class EditNamePageState extends State<EditNamePage> {
               style: const TextStyle(color: Colors.black),
             ),
             ElevatedButton(
-              onPressed: () {
-                // TODO: #4 名前を入力し、名前を更新する。
-                // ここで名前を更新するロジックを書きます。
-                // 例えば、Firestoreに保存する場合など。
+              onPressed: () async { // Make sure to mark this as async
+                // TODO: Validate if the name is not empty and other business rules
 
-                // 更新が成功したら、SettingsPageに戻る
-                Navigator.pop(context, _nameController.text);
+                // Assuming you have a users collection, and each document ID is the user's UID
+                // Replace 'uid' with the actual current user's UID
+                DocumentReference userDocRef = _firestore.collection('users').doc('uid');
+
+                // Before updating, you might want to check if the name is already set or not
+                DocumentSnapshot userData = await userDocRef.get();
+                
+                if (userData.exists && userData['name'] == null) { // Replace 'name' with your actual field name
+                  // If name is not set, then update
+                  await userDocRef.update({
+                    'name': _nameController.text, // Replace 'name' with your actual field name
+                  });
+
+                  // Pop with updated name
+                  Navigator.pop(context, _nameController.text);
+                } else {
+                  // Show error or message that name can't be updated
+                  // You should handle this based on your app's UX design
+                  print('Name is already set and cannot be updated'); // Replace this with your error handling logic
+                }
               },
               child: const Text('Update'),
             ),

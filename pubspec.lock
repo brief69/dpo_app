@@ -157,10 +157,10 @@ packages:
     dependency: transitive
     description:
       name: corbado_frontend_api_client
-      sha256: "3770da208b53d7934a947c8cfda2e1713e68bb7d40524d85c874baf5c2ad6681"
+      sha256: "2353d291c55e8f7f1fa842198c8ed82477c4129c34742ef74353e72ce7dc5ba8"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.1"
+    version: "1.0.0"
   coverage:
     dependency: transitive
     description:
@@ -588,10 +588,10 @@ packages:
     dependency: transitive
     description:
       name: intl
-      sha256: "910f85bce16fb5c6f614e117efa303e85a1731bb0081edf3604a2ae6e9a3cc91"
+      sha256: "3bc132a9dbce73a7e4a21a17d06e1878839ffbf975568bc875c60537824b0c4d"
       url: "https://pub.dev"
     source: hosted
-    version: "0.17.0"
+    version: "0.18.1"
   io:
     dependency: transitive
     description:
@@ -716,34 +716,34 @@ packages:
     dependency: "direct main"
     description:
       name: passkeys
-      sha256: "19c7d19eef01bbf3f0dbae07cff1c9c7ec5559af24c3de4b9d5d1224ee108bec"
+      sha256: "78e5e7191da66548623ad06eb510ff54009e8aa93387a3bac2b7f8216ff96a94"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.1"
+    version: "1.0.3"
   passkeys_android:
     dependency: transitive
     description:
       name: passkeys_android
-      sha256: "908780b68d867aa626478ce203c4a7a841f57cceea346610be2d8bdd2bfdd426"
+      sha256: d0bbc591cc85347767ea912f2d6540fdf7dd6d7d8ceb236709ff66a35e59e624
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.0"
+    version: "1.0.0"
   passkeys_ios:
     dependency: transitive
     description:
       name: passkeys_ios
-      sha256: "6ddacfc3344cfb3d0b31d72fff3cff89b699cdc94ef4eac47d7558434f16e012"
+      sha256: "62866544c45f2bbe90c0ca501f649fbbf62b6256731678a279773e6f451aaaeb"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.0"
+    version: "1.0.2"
   passkeys_platform_interface:
     dependency: transitive
     description:
       name: passkeys_platform_interface
-      sha256: "57a6fb6c93b6bd9dd0ee8ae66812d6299e794b9a6bf7dbe430baf2d907122828"
+      sha256: a12a6b2e45e3bbec7d137c73cd99b27ad25ff4a2279ce28d995fe3a223e80e98
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.0"
+    version: "1.0.0"
   path:
     dependency: transitive
     description:

@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  passkeys: ^0.1.1
+  passkeys: ^1.0.3
   firebase_auth: ^4.10.0
   cupertino_icons: ^1.0.2
   cloud_firestore: ^4.9.2
@@ -19,13 +19,16 @@ dependencies:
   provider: ^6.0.5
   riverpod: ^1.0.3
   fl_chart: ^0.63.0
-  http: ^0.13.3
+  http: ^1.1.4 # This dependency is overridden below
   logger: ^2.0.1
   flutter_datetime_picker: ^1.5.1
   url_launcher: ^6.0.12
   qr_flutter: ^4.1.0
   flutter_secure_storage: ^9.0.0
   solana: ^0.30.0
+
+dependency_overrides:
+  http: ^0.13.3 # Overriding the http version due to version conflicts
 
 dev_dependencies:
   flutter_test:
