@@ -11,7 +11,7 @@ class EqPostViewModel with ChangeNotifier {
   List<EqPost> get replies => eq;
 
   Future<void> fetchReplies(String postId) async {
-    // ここでFirebaseからpostIdに関連する派生投稿をフェッチします
+    // ここでFirebaseからpostIdに関連する派生投稿をフェッチ。
     try {
       var response = await FirebaseFirestore.instance.collection('replies').where('postId', isEqualTo: postId).get();
       for (var doc in response.docs) {
@@ -21,12 +21,11 @@ class EqPostViewModel with ChangeNotifier {
       content: doc.data()['content'],
       ));
       }
-      // 今回は疑似データを使います
+      // TODO:現在は疑似データを使っていて、実際には上記のようにFirebaseからデータを取得する
       eq.add(EqPost(id: 'r1', referenceId: postId, content: 'This is a reply to the post.'));
       notifyListeners();
     } catch (error) {
       ("Error fetching data: $error");
-      // TODO: エラーハンドリングの追加
     }
   }
 }

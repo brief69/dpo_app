@@ -5,7 +5,7 @@ import 'package:passkeys/passkey_auth.dart';
 import 'package:passkeys/relying_party_server/relying_party_server.dart';
 
 class AuthService {
-  final PasskeyAuth _auth = PasskeyAuth('http://example.com' as RelyingPartyServer);// TODO:サーバーを使うかどうか危ういが現在は例としてダミーのURLを指定している。
+  final PasskeyAuth _auth = PasskeyAuth('http://example.com' as RelyingPartyServer);// TODO: さーばーのURLを入れる
 
   Future<String?> registerWithEmail(String email) async {
     final response = await _auth.registerWithEmail(email);
@@ -16,15 +16,9 @@ class AuthService {
   }
 }
 
-// 説明:
-// 'package:passkeys/passkey_auth.dart': 
-// PasskeyAuthという外部ライブラリのクラスを使用するためのインポートです。
-// このライブラリは、電子メールを使ったパスキー認証に関する機能を提供します。
 
 // AuthServiceクラス:
-// PasskeyAuth _auth: PasskeyAuthクラスのインスタンスを生成しています。
-//コメントに// TODO #22:サーバーのURLを指定とあり、今後サーバーのURLを指定しなければならない。
-// これは、PasskeyAuthの機能を使用するための設定や初期化がまだ完全には行われていないことを示しています。
+// PasskeyAuth _auth: PasskeyAuthクラスのインスタンスを生成。
 
 // registerWithEmailメソッド:
 // このメソッドは、電子メールアドレスを引数に取り、そのメールアドレスを使用してユーザーを登録します。
