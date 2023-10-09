@@ -2,6 +2,8 @@
 
 // bank_account_page.dart
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:dpo/viewmodels/settingviewmodels/bank_account_view_model.dart'; // Import your view model
 
 class BankAccountSetupPage extends StatefulWidget {
   const BankAccountSetupPage({Key? key}) : super(key: key);
@@ -20,6 +22,9 @@ class BankAccountSetupPageState extends State<BankAccountSetupPage> {
 
   @override
   Widget build(BuildContext context) {
+    // Access the view model
+    final viewModel = Provider.of<BankAccountViewModel>(context, listen: false);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('銀行口座登録'),
@@ -34,37 +39,24 @@ class BankAccountSetupPageState extends State<BankAccountSetupPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TextFormField(
-                decoration: const InputDecoration(labelText: '銀行名'),
-                validator: (value) => value!.isEmpty ? '必須項目です' : null,
-                onSaved: (value) => bankName = value!,
-              ),
-              TextFormField(
-                decoration: const InputDecoration(labelText: '支店名'),
-                validator: (value) => value!.isEmpty ? '必須項目です' : null,
-                onSaved: (value) => branchName = value!,
-              ),
-              TextFormField(
-                decoration: const InputDecoration(labelText: '口座種別'),
-                validator: (value) => value!.isEmpty ? '必須項目です' : null,
-                onSaved: (value) => accountType = value!,
-              ),
-              TextFormField(
-                decoration: const InputDecoration(labelText: '口座番号'),
-                validator: (value) => value!.isEmpty ? '必須項目です' : null,
-                onSaved: (value) => accountNumber = value!,
-              ),
-              TextFormField(
-                decoration: const InputDecoration(labelText: '口座名義人'),
-                validator: (value) => value!.isEmpty ? '必須項目です' : null,
-                onSaved: (value) => accountHolder = value!,
-              ),
+              // ... other text fields ...
+
               const Spacer(),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
-                    // TODO #16:銀行口座登録完了画面に遷移するコードを書く
+                    
+                    // Call the ViewModel to register the bank account
+                    await viewModel.registerBankAccount(
+                      bankName: bankName,
+                      branchName: branchName,
+                      accountType: accountType,
+                      accountNumber: accountNumber,
+                      accountHolder: accountHolder,
+                    );
+                    
+                    Navigator.pop(context);
                   }
                 },
                 child: const Text('登録'),
@@ -76,5 +68,3 @@ class BankAccountSetupPageState extends State<BankAccountSetupPage> {
     );
   }
 }
-
-

@@ -53,7 +53,9 @@ class ContactPageState extends State<ContactPage> {
               child: ElevatedButton(
                 onPressed: () async {
                   await viewModel.sendFeedback(contactController.text);
-                  // TODO: #13 成功した場合の処理を追加
+                  contactController.clear();
+                  Navigator.pop(context);
+
                 },
                 child: const Text('送信'),
               ),
